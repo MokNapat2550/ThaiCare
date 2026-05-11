@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThaiCare — แอปดูแลผู้ป่วยระยะกลาง</title>
+  <meta name="description"
+    content="ThaiCare แอปพลิเคชันสนับสนุนผู้ดูแลผู้ป่วยระยะกลาง ประเมิน ADL Motor Power แนะนำยาสมุนไพร และท่านวดแผนไทย" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== CURSOR GLOW ===== -->
+  <div id="cursor-glow"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo" id="nav-logo-link">
+        <img src="assets/lonavbar/logo2.png" alt="ThaiCare Logo" id="logo-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div class="logo-placeholder" style="display:none">
+         
+        </div>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link" data-section="home">หน้าหลัก</a></li>
+        <li><a href="#features" class="nav-link" data-section="features">ฟีเจอร์</a></li>
+        <li><a href="#howto" class="nav-link" data-section="howto">วิธีการใช้งาน</a></li>
+        <li><a href="#team" class="nav-link" data-section="team">ทีม</a></li>
+      </ul>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="เปิดเมนู">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="section hero-section">
+    <!-- Animated background -->
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="particles" id="particles"></div>
+    </div>
+
+    <div class="hero-inner">
+      <!-- Left -->
+      <div class="hero-left" id="hero-left">
+        <div class="hero-badge"><img src="assets/spon/ssp.png" alt="SSP Logo" class="badge-icon"> โรงเรียนสตรีสมุทรปราการ</div>
+        <h1 class="hero-title">
+          <span class="title-main">ThaiCare</span>
+        </h1>
+        <p class="hero-desc">
+          แอปพลิเคชันที่ช่วยสนับสนุนผู้ดูแลผู้ป่วยระยะกลางในการดูแล<br>ผู้ป่วยที่บ้านอย่างมีประสิทธิภาพและปลอดภัย
+        </p>
+        <div class="hero-buttons">
+          <a href="#" id="btn-android" class="btn-store btn-android">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.523 15.341a.985.985 0 01-.984.984.985.985 0 01-.984-.984.985.985 0 01.984-.984.985.985 0 01.984.984zm-9.062 0a.985.985 0 01-.984.984.985.985 0 01-.984-.984.985.985 0 01.984-.984.985.985 0 01.984.984zm9.438-7.219l1.758-3.047a.366.366 0 00-.133-.5.366.366 0 00-.5.133l-1.781 3.086A10.948 10.948 0 0012 7.5c-1.758 0-3.422.414-4.875 1.148L5.344 5.562a.366.366 0 00-.5-.133.366.366 0 00-.133.5l1.758 3.047C3.797 10.547 2.25 13.031 2.25 15.75h19.5c0-2.719-1.547-5.203-3.851-7.628z" />
+            </svg>
+            <div>
+              <span class="btn-store-sub">ลองเล่นเลย !</span>
+              <span class="btn-store-main">Android</span>
+            </div>
+          </a>
+          <a href="#" id="btn-ios" class="btn-store btn-ios">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+            </svg>
+            <div>
+              <span class="btn-store-sub">ลองเล่นเลย !</span>
+              <span class="btn-store-main">iOS</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="hero-right" id="hero-right">
+        <div class="phone-glow"></div>
+        <div class="phone-wrapper">
+          <img src="assets/phone/mokja.png" alt="ตัวอย่างแอป ThaiCare" class="hero-phone-img" id="hero-phone-img"
+            onerror="this.src='';this.alt='';this.classList.add('img-placeholder')" />
+        </div>
+        <div class="phone-ring ring-1"></div>
+        <div class="phone-ring ring-2"></div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint" id="hero-scroll-hint">
+      <span>เลื่อนลง</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section id="features" class="section features-section">
+    <div class="section-inner">
+      <div class="section-header" id="features-header">
+        <p class="section-eyebrow">สิ่งที่แอปทำได้</p>
+        <h2 class="section-title">ฟีเจอร์หลัก</h2>
+        <p class="section-subtitle">ครบครันทุกความต้องการในการดูแลผู้ป่วยระยะกลาง</p>
+      </div>
+
+      <div class="features-grid" id="features-grid">
+        <!-- Card 1 -->
+        <article class="feature-card" id="feat-card-1">
+          <div class="feat-img-wrap">
+            <img src="assets/featurephoto/ประเมินจ้า.png" alt="ประเมิน ADL"
+              onerror="this.onerror=null;this.src='assets/feature-all.png';this.classList.add('feat-fallback')" />
+          </div>
+          <h3 class="feat-title">ประเมินและติดตาม</h3>
+          <p class="feat-desc">ระบบประเมิน ADL และ Motor Power ที่เข้าใจง่ายและแม่นยำ</p>
+          <div class="feat-line"></div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="feature-card" id="feat-card-2">
+          <div class="feat-img-wrap">
+            <img src="assets/featurephoto/ไพรจ้า.png" alt="แนะนำยาสมุนไพร"
+              onerror="this.onerror=null;this.src='assets/feature-all.png';this.classList.add('feat-fallback')" />
+          </div>
+          <h3 class="feat-title">แนะนำยาสมุนไพร</h3>
+          <p class="feat-desc">คำแนะนำยาสมุนไพรตามอาการของผู้ป่วยแต่ละบุคคล</p>
+          <div class="feat-line"></div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="feature-card" id="feat-card-3">
+          <div class="feat-img-wrap">
+            <img src="assets/featurephoto/gg.png" alt="ท่านวดพื้นฐาน"
+              onerror="this.onerror=null;this.src='assets/feature-all.png';this.classList.add('feat-fallback')" />
+          </div>
+          <h3 class="feat-title">ท่านวดพื้นฐาน</h3>
+          <p class="feat-desc">ท่าทางการนวด 15 ท่าพื้นฐานตามแพทย์แผนไทย</p>
+          <div class="feat-line"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW TO USE ===== -->
+  <section id="howto" class="section howto-section">
+    <div class="particles" id="particles-howto"></div>
+    <div class="howto-sticky-header" id="howto-header">
+      <p class="section-eyebrow">เริ่มต้นง่ายๆ</p>
+      <h2 class="section-title">วิธีการใช้งาน</h2>
+      <p class="section-subtitle">ใช้งานง่าย เพียงปลายนิ้ว</p>
+    </div>
+
+    <!-- Step 1: phone left, text right -->
+    <div class="howto-step" id="howto-step-1" data-dir="left">
+      <div class="howto-phone howto-phone-left" id="hs1-phone">
+        <div class="phone-frame">
+          <img src="assets/tutorials/2.png" alt="ล็อกอิน" onerror="this.onerror=null;this.src='assets/hero-app.png'" />
+        </div>
+      </div>
+      <div class="howto-content howto-content-right" id="hs1-content">
+        <div class="howto-arrow howto-arrow-left">
+          <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M120 20 L10 20 M10 20 L30 8 M10 20 L30 32" stroke="#577460" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="howto-text-box">
+          <span class="howto-step-num">01</span>
+          <h3 class="howto-step-title">สมัครสมาชิก / เข้าสู่ระบบ</h3>
+          <p class="howto-step-desc">สร้างบัญชีหรือเข้าสู่ระบบเพื่อเริ่มใช้งานแอป ThaiCare
+            </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: phone right, text left -->
+    <div class="howto-step" id="howto-step-2" data-dir="right">
+      <div class="howto-content howto-content-left" id="hs2-content">
+        <div class="howto-text-box">
+          <span class="howto-step-num">02</span>
+          <h3 class="howto-step-title">ประเมิน ADL & Motor Power</h3>
+          <p class="howto-step-desc">ทำแบบประเมินระดับความสามารถในการดำเนินชีวิตประจำวัน
+            และความแข็งแรงของกล้ามเนื้อตามอย่างมีประสิทธิภาพ</p>
+        </div>
+        <div class="howto-arrow howto-arrow-right">
+          <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 20 L110 20 M110 20 L90 8 M110 20 L90 32" stroke="#577460" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+      <div class="howto-phone howto-phone-right" id="hs2-phone">
+        <div class="phone-frame">
+          <img src="assets/tutorials/3.png" alt="ประเมิน ADL" onerror="this.onerror=null;this.src='assets/hero-app.png'" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3: phone left, text right -->
+    <div class="howto-step" id="howto-step-3" data-dir="left">
+      <div class="howto-phone howto-phone-left" id="hs3-phone">
+        <div class="phone-frame">
+          <img src="assets/tutorials/4.png" alt="ยาสมุนไพร" onerror="this.onerror=null;this.src='assets/hero-app.png'" />
+        </div>
+      </div>
+      <div class="howto-content howto-content-right" id="hs3-content">
+        <div class="howto-arrow howto-arrow-left">
+          <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M120 20 L10 20 M10 20 L30 8 M10 20 L30 32" stroke="#577460" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="howto-text-box">
+          <span class="howto-step-num">03</span>
+          <h3 class="howto-step-title">รับคำแนะนำยาสมุนไพร</h3>
+          <p class="howto-step-desc">ระบบจะวิเคราะห์ผลการประเมินและแนะนำยาสมุนไพรที่เหมาะสมกับสภาวะสุขภาพของผู้ป่วยแต่ละบุคคล</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4: phone right, text left -->
+    <div class="howto-step" id="howto-step-4" data-dir="right">
+      <div class="howto-content howto-content-left" id="hs4-content">
+        <div class="howto-text-box">
+          <span class="howto-step-num">04</span>
+          <h3 class="howto-step-title">ท่านวดแผนไทย 15 ท่า</h3>
+          <p class="howto-step-desc">เรียนรู้ท่านวดแผนไทยพื้นฐาน 15 ท่า
+            พร้อมคำแนะนำทีละ<br>ขั้นตอนเพื่อช่วยบรรเทาอาการกล้ามเนื้อตึง</p>
+        </div>
+        <div class="howto-arrow howto-arrow-right">
+          <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 20 L110 20 M110 20 L90 8 M110 20 L90 32" stroke="#577460" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+      <div class="howto-phone howto-phone-right" id="hs4-phone">
+        <div class="phone-frame">
+          <img src="assets/tutorials/5.png" alt="ท่านวด" onerror="this.onerror=null;this.src='assets/hero-app.png'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEAM ===== -->
+  <section id="team" class="section team-section">
+    <div class="section-inner">
+      <div class="section-header" id="team-header">
+        <h2 class="section-title">ทีมพัฒนา</h2>
+      </div>
+
+      <div class="team-carousel-wrapper">
+        <div class="team-carousel" id="team-carousel">
+          <!-- Cards duplicated for infinite loop -->
+          <div class="team-card" id="team-card-1">
+            <div class="team-photo-ring">
+              <img src="assets/myTeam/ครูแอนนา.png" alt="สมาชิกทีม 1" class="team-photo"
+                onerror="this.onerror=null;this.src='assets/team-all.png';this.classList.add('team-fallback')" />
+            </div>
+            <h4 class="team-name">นางสาวกมลวรรณ งามยิ่งไพศาล</h4>
+            <p class="team-role">ครูที่ปรึกษา</p>
+          </div>
+          <div class="team-card" id="team-card-2">
+            <div class="team-photo-ring">
+              <img src="assets/myTeam/นีน่า.jpg" alt="สมาชิกทีม 2" class="team-photo"
+                onerror="this.onerror=null;this.src='assets/team-all.png';this.classList.add('team-fallback')" />
+            </div>
+            <h4 class="team-name">นางสาวญาณพัฒน์ นันทวัฒนานุกูล</h4>
+            <p class="team-role">โรงเรียนสตรีสมุทรปราการ</p>
+          </div>
+          <div class="team-card" id="team-card-3">
+            <div class="team-photo-ring">
+              <img src="assets/myTeam/การ์ตูน.jpg" alt="สมาชิกทีม 3" class="team-photo"
+                onerror="this.onerror=null;this.src='assets/team-all.png';this.classList.add('team-fallback')" />
+            </div>
+            <h4 class="team-name">นางสาวทฤฒมน กุลพงษ์</h4>
+            <p class="team-role">โรงเรียนสตรีสมุทรปราการ</p>
+          </div>
+          <div class="team-card" id="team-card-4">
+            <div class="team-photo-ring teacher">
+              <img src="assets/myTeam/หมอก.jpeg" alt="อาจารย์ที่ปรึกษา" class="team-photo"
+                onerror="this.onerror=null;this.src='assets/team-all.png';this.classList.add('team-fallback')" />
+            </div>
+            <h4 class="team-name">นายณภัทร คำพันธ์</h4>
+            <p class="team-role">โรงเรียนสตรีสมุทรปราการ</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-logos">
+        <div class="team-logo-box">
+          <img src="assets/spon/ssp.png" alt="โลโก้ที่ 1" class="team-logo-img" />
+        </div>
+        <div class="team-logo-box">
+          <img src="assets/spon/sitt.png" alt="โลโก้ที่ 2" class="team-logo-img" />
+        </div>
+      </div>
+
+      <!-- Visitor Counter -->
+      <div class="visitor-counter-wrapper">
+        <div class="visitor-counter">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="visitor-icon">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          <span class="visitor-text" id="visitor-count">ผู้เข้าชม: 0 คน</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div class="modal-overlay" id="android-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="android-close">&times;</button>
+      <h3 class="modal-title">เลือกรูปแบบการใช้งาน</h3>
+      <p class="modal-desc">คุณต้องการเข้าใช้งาน ThaiCare ผ่านช่องทางใด?</p>
+      <div class="modal-actions">
+        <a href="https://drive.google.com/file/d/1ImpOQ3XQ3BtpVEP9Y18WiObL3on2YwsM/view?usp=drive_link" target="_blank" class="btn-modal btn-primary">โหลด ThaiCare.apk</a>
+        <a href="https://thaicare-d2318.web.app/" class="btn-modal btn-secondary">ใช้งาน ThaiCare บนเว็บไซต์</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="ios-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="ios-close">&times;</button>
+      <h3 class="modal-title">เร็วๆ นี้</h3>
+      <p class="modal-desc">แอปพลิเคชันบน iOS กำลังอยู่ในช่วงพัฒนา จะเปิดให้ดาวน์โหลดเร็วๆ นี้</p>
+      <div class="modal-actions">
+        <a href="https://thaicare-d2318.web.app/" class="btn-modal btn-primary">ใช้งาน ThaiCare บนเว็บไซต์</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
