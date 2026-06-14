@@ -2,6 +2,156 @@
    THAICARE — main.js
    ============================================= */
 
+/* ── i18n Translations ── */
+const translations = {
+  th: {
+    'meta.title':             'ThaiCare — แอปดูแลผู้ป่วยระยะกลาง',
+    'meta.desc':              'ThaiCare แอปพลิเคชันสนับสนุนผู้ดูแลผู้ป่วยระยะกลาง ประเมิน ADL Motor Power แนะนำยาสมุนไพร และท่านวดแผนไทย',
+    'nav.home':               'หน้าหลัก',
+    'nav.features':           'ฟีเจอร์',
+    'nav.howto':              'วิธีการใช้งาน',
+    'nav.team':               'ทีม',
+    'hero.school':            'โรงเรียนสตรีสมุทรปราการ',
+    'hero.desc':              'แอปพลิเคชันที่ช่วยสนับสนุนผู้ดูแลผู้ป่วยระยะกลางในการดูแล\nผู้ป่วยที่บ้านอย่างมีประสิทธิภาพและปลอดภัย',
+    'hero.tryNow':            'ลองเล่นเลย !',
+    'hero.scrollDown':        'เลื่อนลง',
+    'features.eyebrow':       'สิ่งที่แอปทำได้',
+    'features.title':         'ฟีเจอร์หลัก',
+    'features.subtitle':      'ครบครันทุกความต้องการในการดูแลผู้ป่วยระยะกลาง',
+    'features.card1.title':   'ประเมินและติดตาม',
+    'features.card1.desc':    'ระบบประเมิน ADL และ Motor Power ที่เข้าใจง่ายและแม่นยำ',
+    'features.card2.title':   'แนะนำยาสมุนไพร',
+    'features.card2.desc':    'คำแนะนำยาสมุนไพรตามอาการของผู้ป่วยแต่ละบุคคล',
+    'features.card3.title':   'ท่านวดพื้นฐาน',
+    'features.card3.desc':    'ท่าทางการนวด 15 ท่าพื้นฐานตามแพทย์แผนไทย',
+    'howto.eyebrow':          'เริ่มต้นง่ายๆ',
+    'howto.title':            'วิธีการใช้งาน',
+    'howto.subtitle':         'ใช้งานง่าย เพียงปลายนิ้ว',
+    'howto.step1.title':      'สมัครสมาชิก / เข้าสู่ระบบ',
+    'howto.step1.desc':       'สร้างบัญชีหรือเข้าสู่ระบบเพื่อเริ่มใช้งานแอป ThaiCare',
+    'howto.step2.title':      'ประเมิน ADL & Motor Power',
+    'howto.step2.desc':       'ทำแบบประเมินระดับความสามารถในการดำเนินชีวิตประจำวัน และความแข็งแรงของกล้ามเนื้อตามอย่างมีประสิทธิภาพ',
+    'howto.step3.title':      'รับคำแนะนำยาสมุนไพร',
+    'howto.step3.desc':       'ระบบจะวิเคราะห์ผลการประเมินและแนะนำยาสมุนไพรที่เหมาะสมกับสภาวะสุขภาพของผู้ป่วยแต่ละบุคคล',
+    'howto.step4.title':      'ท่านวดแผนไทย 15 ท่า',
+    'howto.step4.desc':       'เรียนรู้ท่านวดแผนไทยพื้นฐาน 15 ท่า พร้อมคำแนะนำทีละขั้นตอนเพื่อช่วยบรรเทาอาการกล้ามเนื้อตึง',
+    'team.title':             'ทีมพัฒนา',
+    'team.role.advisor':      'ครูที่ปรึกษา',
+    'team.role.school':       'โรงเรียนสตรีสมุทรปราการ',
+    'modal.android.title':    'เลือกรูปแบบการใช้งาน',
+    'modal.android.desc':     'คุณต้องการเข้าใช้งาน ThaiCare ผ่านช่องทางใด?',
+    'modal.android.download': 'โหลด ThaiCare.apk',
+    'modal.android.web':      'ใช้งาน ThaiCare บนเว็บไซต์',
+    'modal.ios.title':        'เร็วๆ นี้',
+    'modal.ios.desc':         'แอปพลิเคชันบน iOS กำลังอยู่ในช่วงพัฒนา จะเปิดให้ดาวน์โหลดเร็วๆ นี้',
+    'visitor.label':          'ผู้เข้าชม',
+    'visitor.unit':           'คน',
+    "team.member1.name": "นางสาวกมลวรรณ งามยิ่งไพศาล",
+    "team.member2.name": "นางสาวญาณพัฒน์ นันทวัฒนานุกูล",
+    "team.member3.name": "นางสาวทฤฒมน กุลพงษ์",
+    "team.member4.name": "นายณภัทร คำพันธ์"
+  },
+  en: {
+    'meta.title':             'ThaiCare — Intermediate Care Patient App',
+    'meta.desc':              'ThaiCare application supporting caregivers of intermediate care patients. Assess ADL, Motor Power, herbal medicine recommendations, and Thai massage.',
+    'nav.home':               'Home',
+    'nav.features':           'Features',
+    'nav.howto':              'How to Use',
+    'nav.team':               'Team',
+    'hero.school':            'Streesmutprakan School',
+    'hero.desc':              'An application that helps support caregivers of intermediate care patients in caring for patients at home effectively and safely.',
+    'hero.tryNow':            'Try it now!',
+    'hero.scrollDown':        'Scroll down',
+    'features.eyebrow':       'What the app can do',
+    'features.title':         'Key Features',
+    'features.subtitle':      'Everything you need for intermediate care patient management',
+    'features.card1.title':   'Assess & Track',
+    'features.card1.desc':    'Easy-to-understand and accurate ADL and Motor Power assessment system',
+    'features.card2.title':   'Herbal Medicine',
+    'features.card2.desc':    'Personalized herbal medicine recommendations based on each patient\'s symptoms',
+    'features.card3.title':   'Basic Massage',
+    'features.card3.desc':    '15 basic Thai traditional massage poses',
+    'howto.eyebrow':          'Get started easily',
+    'howto.title':            'How to Use',
+    'howto.subtitle':         'Simple to use, just a fingertip away',
+    'howto.step1.title':      'Register / Sign In',
+    'howto.step1.desc':       'Create an account or sign in to start using the ThaiCare app',
+    'howto.step2.title':      'Assess ADL & Motor Power',
+    'howto.step2.desc':       'Complete an assessment of daily living ability and muscle strength effectively',
+    'howto.step3.title':      'Get Herbal Recommendations',
+    'howto.step3.desc':       'The system analyzes assessment results and recommends appropriate herbal medicines for each patient',
+    'howto.step4.title':      '15 Thai Massage Poses',
+    'howto.step4.desc':       'Learn 15 basic Thai traditional massage poses with step-by-step instructions to relieve muscle tension',
+    'team.title':             'Team',
+    'team.role.advisor':      'Teacher',
+    'team.role.school':       'Student',
+    'modal.android.title':    'Choose How to Use',
+    'modal.android.desc':     'How would you like to use ThaiCare?',
+    'modal.android.download': 'Download ThaiCare.apk',
+    'modal.android.web':      'Use ThaiCare on Web',
+    'modal.ios.title':        'Coming Soon',
+    'modal.ios.desc':         'The iOS application is currently in development and will be available for download soon.',
+    'visitor.label':          'Visitors',
+    'visitor.unit':           '',
+    "team.member1.name": "Miss Kamonwan Ngamyingshaisan",
+    "team.member2.name": "Miss Yanaphat Nantawattananukul",
+    "team.member3.name": "Miss Trittamon Kulapongg",
+    "team.member4.name": "Mr. Napat Khampan"
+  }
+};
+
+let currentLang = localStorage.getItem('thaicare_lang') || 'th';
+
+function applyLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('thaicare_lang', lang);
+
+  const dict = translations[lang];
+  const htmlRoot = document.getElementById('html-root');
+  if (htmlRoot) htmlRoot.lang = lang === 'th' ? 'th' : 'en';
+
+  // Update meta
+  const metaTitle = document.querySelector('[data-i18n="meta.title"]');
+  if (metaTitle) document.title = dict['meta.title'];
+  const metaDesc = document.getElementById('meta-desc');
+  if (metaDesc) metaDesc.setAttribute('content', dict['meta.desc']);
+
+  // Update all data-i18n elements (text content)
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) {
+      // For elements that shouldn't change innerHTML structure, use textContent
+      // For hero.desc we keep innerHTML since it might have <br>
+      if (key === 'hero.desc') {
+        el.innerHTML = dict[key].replace('\n', '<br>');
+      } else {
+        el.textContent = dict[key];
+      }
+    }
+  });
+
+  // Toggle button active state
+  const thBtn = document.getElementById('lang-th');
+  const enBtn = document.getElementById('lang-en');
+  if (thBtn) thBtn.classList.toggle('active', lang === 'th');
+  if (enBtn) enBtn.classList.toggle('active', lang === 'en');
+
+  // Update visitor counter text
+  updateVisitorText();
+}
+
+function updateVisitorText() {
+  const el = document.getElementById('visitor-count');
+  if (!el) return;
+  const count = parseInt(localStorage.getItem('thaicare_visitors')) || 0;
+  const dict = translations[currentLang];
+  if (currentLang === 'th') {
+    el.textContent = `${dict['visitor.label']}: ${count.toLocaleString()} ${dict['visitor.unit']}`;
+  } else {
+    el.textContent = `${count.toLocaleString()} ${dict['visitor.label']}`;
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Cursor glow ── */
@@ -13,7 +163,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── Helper ── */
+  /* ── Language Toggle ── */
+  const langToggle = document.getElementById('lang-toggle');
+  if (langToggle) {
+    langToggle.addEventListener('click', () => {
+      const next = currentLang === 'th' ? 'en' : 'th';
+      applyLanguage(next);
+    });
+  }
   function rand(min, max) { return (Math.random() * (max - min) + min).toFixed(1); }
 
   /* ── Particle dots generator ── */
@@ -350,7 +507,10 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('thaicare_visitors', count);
       sessionStorage.setItem('thaicare_counted', 'true');
     }
-    visitorCountEl.textContent = `ผู้เข้าชม: ${count.toLocaleString()} คน`;
+    // updateVisitorText() will handle display
   }
+
+  /* ── Apply saved language on page load ── */
+  applyLanguage(currentLang);
 
 });
