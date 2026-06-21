@@ -93,7 +93,7 @@ const translations = {
     'modal.ios.desc':         'The iOS application is currently in development and will be available for download soon.',
     'visitor.label':          'Visitors',
     'visitor.unit':           '',
-    "team.member1.name": "Miss Kamonwan Ngamyingshaisan",
+    "team.member1.name": "Miss Kamonwan Ngamyingphaisan",
     "team.member2.name": "Miss Yanaphat Nantawattananukul",
     "team.member3.name": "Miss Trittamon Kulapongg",
     "team.member4.name": "Mr. Napat Khampan"
