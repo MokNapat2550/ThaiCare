@@ -1,8 +1,3 @@
-/* =============================================
-   THAICARE — main.js
-   ============================================= */
-
-/* ── i18n Translations ── */
 const translations = {
   th: {
     'meta.title':             'ThaiCare — แอปดูแลผู้ป่วยระยะกลาง',
@@ -110,18 +105,15 @@ function applyLanguage(lang) {
   const htmlRoot = document.getElementById('html-root');
   if (htmlRoot) htmlRoot.lang = lang === 'th' ? 'th' : 'en';
 
-  // Update meta
+
   const metaTitle = document.querySelector('[data-i18n="meta.title"]');
   if (metaTitle) document.title = dict['meta.title'];
   const metaDesc = document.getElementById('meta-desc');
   if (metaDesc) metaDesc.setAttribute('content', dict['meta.desc']);
 
-  // Update all data-i18n elements (text content)
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (dict[key] !== undefined) {
-      // For elements that shouldn't change innerHTML structure, use textContent
-      // For hero.desc we keep innerHTML since it might have <br>
       if (key === 'hero.desc') {
         el.innerHTML = dict[key].replace('\n', '<br>');
       } else {
@@ -130,13 +122,11 @@ function applyLanguage(lang) {
     }
   });
 
-  // Toggle button active state
   const thBtn = document.getElementById('lang-th');
   const enBtn = document.getElementById('lang-en');
   if (thBtn) thBtn.classList.toggle('active', lang === 'th');
   if (enBtn) enBtn.classList.toggle('active', lang === 'en');
 
-  // Update visitor counter text
   updateVisitorText();
 }
 
@@ -154,7 +144,6 @@ function updateVisitorText() {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── Cursor glow ── */
   const glow = document.getElementById('cursor-glow');
   if (glow) {
     document.addEventListener('mousemove', e => {
@@ -163,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── Language Toggle ── */
   const langToggle = document.getElementById('lang-toggle');
   if (langToggle) {
     langToggle.addEventListener('click', () => {
@@ -173,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function rand(min, max) { return (Math.random() * (max - min) + min).toFixed(1); }
 
-  /* ── Particle dots generator ── */
   function createParticles(containerId, count = 28) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -212,10 +199,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  createParticles('particles');        // Hero
-  createParticles('particles-howto', 45); // How-to (longer section, more dots)
+  createParticles('particles');        
+  createParticles('particles-howto', 45); 
 
-  /* ── Navbar scroll effect ── */
   const navbar = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = ['home', 'features', 'howto', 'team'];
@@ -233,7 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── Smooth scroll nav ── */
   navLinks.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
@@ -244,7 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── Mobile hamburger ── */
   const hamburger = document.getElementById('nav-hamburger');
   const navLinksEl = document.getElementById('nav-links');
   if (hamburger && navLinksEl) {
@@ -254,11 +238,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── GSAP: register plugin first ── */
   if (window.gsap && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Hero left slide in
     gsap.to('#hero-left', {
       opacity: 1,
       x: 0,
@@ -266,7 +248,6 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: 'power3.out',
       delay: 0.3,
     });
-    // Hero right slide in
     gsap.to('#hero-right', {
       opacity: 1,
       x: 0,
@@ -275,7 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
       delay: 0.6,
     });
 
-    /* ── Feature cards ── */
     if (document.querySelector('.feature-card')) {
       gsap.to('.feature-card', {
         scrollTrigger: { trigger: '#features', start: 'top 80%' },
@@ -283,9 +263,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    /* ── How-to steps: alternating slide directions ── */
-    // odd steps (1,3): phone slides from LEFT, text slides from RIGHT
-    // even steps (2,4): phone slides from RIGHT, text slides from LEFT
     const howtoData = [
       { phone: '#hs1-phone', content: '#hs1-content', phoneX: -120, contentX: 120 },
       { phone: '#hs2-phone', content: '#hs2-content', phoneX:  120, contentX: -120 },
@@ -306,7 +283,6 @@ document.addEventListener('DOMContentLoaded', () => {
       );
     });
 
-    /* ── Team section: fade in wrapper ── */
     const teamWrapper = document.querySelector('.team-carousel-wrapper');
     if (teamWrapper) {
       teamWrapper.style.opacity = '0';
@@ -317,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
   } else {
-    /* Fallback: reveal everything immediately with IntersectionObserver */
+
     const makeVisible = el => {
       el.style.transition = 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1)';
       el.style.opacity = '1';
@@ -335,11 +311,9 @@ document.addEventListener('DOMContentLoaded', () => {
       makeVisible(document.getElementById('hero-right') || { style: {} });
     }, 300);
     observe('.feature-card');
-    // team wrapper fade-in fallback
     const tw = document.querySelector('.team-carousel-wrapper');
     if (tw) { tw.style.opacity = '0'; tw.style.transition = 'opacity 1s ease'; const to = new IntersectionObserver(e => { if(e[0].isIntersecting){ tw.style.opacity='1'; to.disconnect(); } }, {threshold:0.1}); to.observe(tw); }
 
-    // how-to: set initial translateX then animate to 0
     const howtoFallback = [
       { phone: 'hs1-phone', content: 'hs1-content', phoneX: '-120px', contentX: '120px' },
       { phone: 'hs2-phone', content: 'hs2-content', phoneX: '120px',  contentX: '-120px' },
@@ -364,8 +338,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
-  /* ── Scroll-reveal for howto header ── */
   const howtoHeader = document.getElementById('howto-header');
   if (howtoHeader) {
     howtoHeader.style.opacity = '0';
@@ -409,7 +381,6 @@ document.addEventListener('DOMContentLoaded', () => {
     obs3.observe(teamHeader);
   }
 
-  // Modals logic
   const btnAndroid = document.getElementById('btn-android');
   const btnIos = document.getElementById('btn-ios');
   const modalAndroid = document.getElementById('android-modal');
@@ -448,7 +419,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if(e.target === modalIos) closeModal(modalIos);
   });
 
-  /* ── Team carousel: clone cards for mobile marquee ── */
   const carousel = document.getElementById('team-carousel');
   if (carousel) {
     const originals = Array.from(carousel.children).filter(
@@ -498,7 +468,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ── Visitor Counter Logic ── */
   const visitorCountEl = document.getElementById('visitor-count');
   if (visitorCountEl) {
     let count = parseInt(localStorage.getItem('thaicare_visitors')) || 0;
@@ -507,10 +476,8 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('thaicare_visitors', count);
       sessionStorage.setItem('thaicare_counted', 'true');
     }
-    // updateVisitorText() will handle display
   }
 
-  /* ── Apply saved language on page load ── */
   applyLanguage(currentLang);
 
 });
